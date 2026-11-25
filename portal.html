@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi cuenta · SANMIRA</title>
+  <meta name="theme-color" content="#1E3B2F">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="min-h-screen">
+  <header class="border-b border-line bg-white">
+    <div class="container-x flex h-16 items-center justify-between gap-4">
+      <a href="/"><img src="/brand/sanmira-logo-horizontal.svg" alt="SANMIRA" class="h-9 w-auto"></a>
+      <div class="flex items-center gap-5 text-sm">
+        <div class="hidden items-center gap-2 text-xs font-medium tracking-wider sm:flex">
+          <button type="button" data-lang="es" class="cursor-pointer underline-offset-4">ES</button><span class="opacity-40">·</span>
+          <button type="button" data-lang="en" class="cursor-pointer underline-offset-4">EN</button><span class="opacity-40">·</span>
+          <button type="button" data-lang="de" class="cursor-pointer underline-offset-4">DE</button>
+        </div>
+        <button type="button" id="logout" class="btn btn-ghost btn-sm" data-i18n="portal.logout"></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container-x py-10 md:py-14">
+    <p class="eyebrow" id="role-label"></p>
+    <h1 class="mt-2 text-4xl md:text-5xl"><span data-i18n="portal.hello"></span>, <span id="user-name"></span></h1>
+    <div id="portal" class="mt-10" aria-live="polite">
+      <div class="h-64 animate-pulse rounded bg-eucalipto/60"></div>
+    </div>
+  </main>
+
+  <input type="file" id="file-input" class="hidden" accept=".pdf,.jpg,.jpeg,.png,.webp,.heic">
+  <script type="module" src="/src/pages/portal.js"></script>
+</body>
+</html>

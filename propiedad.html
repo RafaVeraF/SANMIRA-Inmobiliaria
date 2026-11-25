@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propiedad · SANMIRA</title>
+  <meta name="theme-color" content="#1E3B2F">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container-x py-10 md:py-14">
+    <a href="/#inventario" class="text-sm text-laton hover:underline">← <span data-i18n="prop.back"></span></a>
+    <div id="property" class="mt-8" aria-live="polite">
+      <div class="h-[420px] animate-pulse rounded bg-eucalipto/60"></div>
+    </div>
+
+    <section class="mt-16 grid gap-10 border-t border-line pt-14 lg:grid-cols-[1fr_1.3fr]">
+      <div>
+        <p class="eyebrow" data-i18n="contact.eyebrow"></p>
+        <h2 class="mt-3 text-4xl" data-i18n="prop.ask"></h2>
+        <p class="mt-4 text-muted" data-i18n="contact.lead"></p>
+        <a id="wa-link" href="#" target="_blank" rel="noopener" class="btn btn-ghost mt-6" data-i18n="contact.whatsapp"></a>
+      </div>
+      <form id="contact-form" class="card grid gap-5 p-7 md:grid-cols-2" novalidate>
+        <div><label class="label" for="c-name" data-i18n="contact.name"></label><input id="c-name" name="name" required minlength="2" maxlength="120" class="input" autocomplete="name"></div>
+        <div><label class="label" for="c-email" data-i18n="contact.email"></label><input id="c-email" name="email" type="email" required maxlength="200" class="input" autocomplete="email"></div>
+        <div class="md:col-span-2"><label class="label" for="c-phone" data-i18n="contact.phone"></label><input id="c-phone" name="phone" maxlength="40" class="input" autocomplete="tel"></div>
+        <input type="hidden" name="interest" id="c-interest" value="comprar">
+        <div class="md:col-span-2"><label class="label" for="c-msg" data-i18n="contact.message"></label><textarea id="c-msg" name="message" rows="4" maxlength="3000" class="input"></textarea></div>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+        <div class="md:col-span-2"><button type="submit" class="btn btn-primary px-6 py-3" data-i18n="contact.send"></button></div>
+      </form>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script type="module" src="/src/pages/propiedad.js"></script>
+</body>
+</html>

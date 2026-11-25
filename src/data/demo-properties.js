@@ -1,0 +1,43 @@
+// Propiedades de ejemplo que se muestran mientras Supabase no está configurado.
+export const demoProperties = [
+  {
+    id: 'demo-1', slug: 'casa-jardin-juriquilla', operation: 'venta', property_type: 'casa', status: 'disponible',
+    title_es: 'Casa con jardín en Juriquilla', title_en: 'House with garden in Juriquilla', title_de: 'Haus mit Garten in Juriquilla',
+    description_es: 'Casa de dos niveles con doble altura, jardín privado y vista a la presa. A 15 minutos de la zona industrial y de las mejores escuelas bilingües.',
+    description_en: 'Two-storey house with double-height living room, private garden and lake views. 15 minutes from the industrial parks and top bilingual schools.',
+    description_de: 'Zweistöckiges Haus mit doppelter Raumhöhe, Privatgarten und Seeblick. 15 Minuten von den Industrieparks und den besten bilingualen Schulen.',
+    price: 8450000, currency: 'MXN', zone: 'Juriquilla', city: 'Querétaro',
+    bedrooms: 4, bathrooms: 3.5, parking: 2, construction_m2: 320, land_m2: 280,
+    amenities: ['jardín', 'seguridad 24/7', 'casa club', 'roof garden'], featured: true, images: [], cover_url: null,
+  },
+  {
+    id: 'demo-2', slug: 'depto-centro-historico', operation: 'venta', property_type: 'departamento', status: 'disponible',
+    title_es: 'Departamento en el Centro Histórico', title_en: 'Apartment in the Historic Center', title_de: 'Wohnung in der Altstadt',
+    description_es: 'Departamento restaurado en casona del siglo XVIII, a dos calles del Jardín Zenea. Ideal para renta vacacional.',
+    description_en: 'Restored apartment in an 18th-century mansion, two blocks from Jardín Zenea. Ideal for short-term rental.',
+    description_de: 'Restaurierte Wohnung in einem Herrenhaus aus dem 18. Jahrhundert, zwei Straßen vom Jardín Zenea. Ideal für Ferienvermietung.',
+    price: 4200000, currency: 'MXN', zone: 'Centro Histórico', city: 'Querétaro',
+    bedrooms: 2, bathrooms: 2, parking: 1, construction_m2: 110, land_m2: null,
+    amenities: ['patio central', 'terraza', 'amueblado'], featured: true, images: [], cover_url: null,
+  },
+  {
+    id: 'demo-3', slug: 'casa-renta-el-refugio', operation: 'renta', property_type: 'casa', status: 'disponible',
+    title_es: 'Casa en renta en El Refugio', title_en: 'House for rent in El Refugio', title_de: 'Haus zur Miete in El Refugio',
+    description_es: 'Casa nueva en fraccionamiento con amenidades, cerca de colegios alemanes y americanos.',
+    description_en: 'Brand-new house in a gated community with amenities, close to German and American schools.',
+    description_de: 'Neues Haus in bewachter Wohnanlage mit Annehmlichkeiten, nahe deutscher und amerikanischer Schulen.',
+    price: 32000, currency: 'MXN', zone: 'El Refugio', city: 'Querétaro',
+    bedrooms: 3, bathrooms: 2.5, parking: 2, construction_m2: 210, land_m2: 160,
+    amenities: ['alberca', 'gimnasio', 'seguridad 24/7'], featured: true, images: [], cover_url: null,
+  },
+  {
+    id: 'demo-4', slug: 'terreno-zibata', operation: 'venta', property_type: 'terreno', status: 'disponible',
+    title_es: 'Terreno residencial en Zibatá', title_en: 'Residential lot in Zibatá', title_de: 'Wohngrundstück in Zibatá',
+    description_es: 'Terreno plano con vista al campo de golf, listo para construir.',
+    description_en: 'Flat lot overlooking the golf course, ready to build.',
+    description_de: 'Ebenes Grundstück mit Blick auf den Golfplatz, baureif.',
+    price: 2650000, currency: 'MXN', zone: 'Zibatá', city: 'El Marqués',
+    bedrooms: null, bathrooms: null, parking: null, construction_m2: null, land_m2: 350,
+    amenities: ['golf', 'seguridad 24/7'], featured: false, images: [], cover_url: null,
+  },
+];

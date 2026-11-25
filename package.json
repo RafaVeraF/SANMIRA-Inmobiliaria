@@ -1,0 +1,23 @@
+{
+  "name": "sanmira-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "SANMIRA Real Estate · Querétaro: landing trilingüe, portal de clientes y CRM",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^6.3.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso · SANMIRA</title>
+  <meta name="theme-color" content="#1E3B2F">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="min-h-screen">
+  <div class="grid min-h-screen lg:grid-cols-[1fr_1.1fr]">
+    <!-- Panel de marca -->
+    <aside class="relative hidden overflow-hidden bg-brand p-14 text-marfil lg:flex lg:flex-col lg:justify-between">
+      <a href="/"><img src="/brand/sanmira-logo-horizontal-ivory.svg" alt="SANMIRA" class="h-12 w-auto"></a>
+      <div class="relative z-10 max-w-md">
+        <p class="font-serif text-4xl leading-tight" data-i18n="footer.tagline"></p>
+        <p class="mt-5 text-marfil/75" data-i18n="login.lead"></p>
+      </div>
+      <div class="pointer-events-none absolute right-12 top-36 flex items-end gap-4 opacity-20" aria-hidden="true">
+        <div class="arch h-40 w-24 bg-salvia"></div>
+        <div class="arch h-56 w-28 bg-marfil"></div>
+        <div class="arch h-36 w-24 bg-cantera"></div>
+      </div>
+    </aside>
+
+    <!-- Formulario -->
+    <main class="flex flex-col px-6 py-8 sm:px-12">
+      <div class="flex items-center justify-between">
+        <a href="/" class="lg:hidden"><img src="/brand/sanmira-logo-horizontal.svg" alt="SANMIRA" class="h-10 w-auto"></a>
+        <div class="ml-auto flex items-center gap-2 text-xs font-medium tracking-wider">
+          <button type="button" data-lang="es" class="cursor-pointer underline-offset-4">ES</button><span class="opacity-40">·</span>
+          <button type="button" data-lang="en" class="cursor-pointer underline-offset-4">EN</button><span class="opacity-40">·</span>
+          <button type="button" data-lang="de" class="cursor-pointer underline-offset-4">DE</button>
+        </div>
+      </div>
+
+      <div class="mx-auto my-auto w-full max-w-md py-10">
+        <p class="eyebrow">SANMIRA</p>
+        <h1 class="mt-3 text-4xl" data-i18n="login.title"></h1>
+        <p id="not-configured" class="mt-4 hidden rounded bg-laton/10 p-3 text-sm text-laton" data-i18n="login.notconfigured"></p>
+
+        <div class="mt-8 flex border-b border-line text-sm" role="tablist">
+          <button type="button" role="tab" data-tab="signin" class="tab -mb-px cursor-pointer border-b-2 px-4 py-2" data-i18n="login.signin"></button>
+          <button type="button" role="tab" data-tab="signup" class="tab -mb-px cursor-pointer border-b-2 px-4 py-2" data-i18n="login.signup"></button>
+        </div>
+
+        <!-- Iniciar sesión -->
+        <form id="signin-form" class="mt-6 grid gap-4" data-panel="signin">
+          <div><label class="label" for="si-email" data-i18n="login.email"></label><input id="si-email" name="email" type="email" required class="input" autocomplete="email"></div>
+          <div><label class="label" for="si-pass" data-i18n="login.password"></label><input id="si-pass" name="password" type="password" required minlength="8" class="input" autocomplete="current-password"></div>
+          <button type="submit" class="btn btn-primary mt-2 py-3" data-i18n="login.signin"></button>
+          <button type="button" id="forgot" class="cursor-pointer text-left text-sm text-laton hover:underline" data-i18n="login.forgot"></button>
+        </form>
+
+        <!-- Crear cuenta -->
+        <form id="signup-form" class="mt-6 hidden gap-4" data-panel="signup">
+          <div><label class="label" for="su-name" data-i18n="login.fullname"></label><input id="su-name" name="full_name" required minlength="2" class="input" autocomplete="name"></div>
+          <div><label class="label" for="su-email" data-i18n="login.email"></label><input id="su-email" name="email" type="email" required class="input" autocomplete="email"></div>
+          <div><label class="label" for="su-phone" data-i18n="contact.phone"></label><input id="su-phone" name="phone" class="input" autocomplete="tel"></div>
+          <div><label class="label" for="su-pass" data-i18n="login.password"></label><input id="su-pass" name="password" type="password" required minlength="8" class="input" autocomplete="new-password"></div>
+          <fieldset>
+            <legend class="label" data-i18n="login.iam"></legend>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <label class="flex cursor-pointer items-center gap-2 rounded border border-line bg-white px-3 py-2 has-[:checked]:border-brand has-[:checked]:bg-eucalipto"><input type="radio" name="role" value="comprador" checked class="accent-brand"><span data-i18n="login.r.comprador"></span></label>
+              <label class="flex cursor-pointer items-center gap-2 rounded border border-line bg-white px-3 py-2 has-[:checked]:border-brand has-[:checked]:bg-eucalipto"><input type="radio" name="role" value="arrendatario" class="accent-brand"><span data-i18n="login.r.arrendatario"></span></label>
+              <label class="flex cursor-pointer items-center gap-2 rounded border border-line bg-white px-3 py-2 has-[:checked]:border-brand has-[:checked]:bg-eucalipto"><input type="radio" name="role" value="vendedor" class="accent-brand"><span data-i18n="login.r.vendedor"></span></label>
+              <label class="flex cursor-pointer items-center gap-2 rounded border border-line bg-white px-3 py-2 has-[:checked]:border-brand has-[:checked]:bg-eucalipto"><input type="radio" name="role" value="arrendador" class="accent-brand"><span data-i18n="login.r.arrendador"></span></label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary mt-2 py-3" data-i18n="login.signup"></button>
+        </form>
+
+        <!-- Nueva contraseña (al volver del correo de recuperación) -->
+        <form id="reset-form" class="mt-6 hidden gap-4">
+          <div><label class="label" for="rs-pass" data-i18n="login.newpass"></label><input id="rs-pass" name="password" type="password" required minlength="8" class="input" autocomplete="new-password"></div>
+          <button type="submit" class="btn btn-primary py-3" data-i18n="login.save"></button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/src/pages/login.js"></script>
+</body>
+</html>

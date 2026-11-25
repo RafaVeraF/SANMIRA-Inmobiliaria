@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANMIRA · Real Estate Querétaro</title>
+  <meta name="description" content="Bienes raíces en Querétaro para inversionistas internacionales. Real estate in Querétaro for international investors. Immobilien in Querétaro für internationale Investoren.">
+  <meta name="theme-color" content="#1E3B2F">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="container-x grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.15fr_1fr]">
+        <div>
+          <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+          <h1 class="mt-5 text-5xl leading-[1.05] text-ink md:text-6xl xl:text-7xl" data-i18n="hero.title"></h1>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-muted" data-i18n="hero.lead"></p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#inventario" class="btn btn-primary px-6 py-3" data-i18n="hero.cta"></a>
+            <a href="#contacto" class="btn btn-ghost px-6 py-3" data-i18n="hero.cta2"></a>
+          </div>
+          <dl class="mt-14 grid max-w-xl grid-cols-3 gap-6 border-t border-line pt-6">
+            <div><dt class="font-serif text-4xl text-brand">3</dt><dd class="mt-1 text-xs text-muted" data-i18n="hero.stat1"></dd></div>
+            <div><dt class="font-serif text-4xl text-brand">2</dt><dd class="mt-1 text-xs text-muted" data-i18n="hero.stat2"></dd></div>
+            <div><dt class="font-serif text-4xl text-brand">100%</dt><dd class="mt-1 text-xs text-muted" data-i18n="hero.stat3"></dd></div>
+          </dl>
+        </div>
+        <!-- Colonnade: los tres arcos de la marca -->
+        <div class="relative hidden h-[520px] lg:block" aria-hidden="true">
+          <div class="absolute bottom-0 left-0 h-[70%] w-[30%] arch ph-photo"></div>
+          <div class="absolute bottom-0 left-[34%] h-full w-[34%] arch bg-brand"></div>
+          <div class="absolute bottom-0 right-0 h-[60%] w-[28%] arch ph-photo-warm"></div>
+          <div class="absolute right-[6%] top-[6%] h-14 w-14 rounded-full bg-cantera"></div>
+          <div class="absolute -bottom-0 left-0 right-0 h-2 bg-laton"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVENTARIO -->
+    <section id="inventario" class="scroll-mt-20 border-t border-line bg-white/60 py-20 md:py-28">
+      <div class="container-x">
+        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p class="eyebrow" data-i18n="inv.eyebrow"></p>
+            <h2 class="mt-3 text-4xl md:text-5xl" data-i18n="inv.title"></h2>
+          </div>
+          <form id="filters" class="flex flex-wrap items-end gap-3" aria-label="Filtros">
+            <div class="flex rounded border border-line bg-white p-1 text-sm" role="radiogroup">
+              <label class="cursor-pointer"><input type="radio" name="op" value="" class="peer sr-only" checked><span class="block rounded px-4 py-1.5 peer-checked:bg-brand peer-checked:text-marfil" data-i18n="inv.all"></span></label>
+              <label class="cursor-pointer"><input type="radio" name="op" value="venta" class="peer sr-only"><span class="block rounded px-4 py-1.5 peer-checked:bg-brand peer-checked:text-marfil" data-i18n="inv.sale"></span></label>
+              <label class="cursor-pointer"><input type="radio" name="op" value="renta" class="peer sr-only"><span class="block rounded px-4 py-1.5 peer-checked:bg-brand peer-checked:text-marfil" data-i18n="inv.rent"></span></label>
+            </div>
+            <select name="type" class="input w-auto" aria-label="Tipo">
+              <option value="" data-i18n="inv.anyType"></option>
+              <option value="casa" data-i18n="type.casa"></option>
+              <option value="departamento" data-i18n="type.departamento"></option>
+              <option value="terreno" data-i18n="type.terreno"></option>
+              <option value="local" data-i18n="type.local"></option>
+              <option value="oficina" data-i18n="type.oficina"></option>
+            </select>
+            <select name="beds" class="input w-auto" aria-label="Recámaras">
+              <option value="" data-i18n="inv.anyBeds"></option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </form>
+        </div>
+        <p id="demo-note" class="mt-6 hidden text-xs text-laton" data-i18n="inv.demo"></p>
+        <div id="property-grid" class="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite">
+          <div class="h-96 animate-pulse rounded bg-eucalipto/60"></div>
+          <div class="h-96 animate-pulse rounded bg-eucalipto/60"></div>
+          <div class="h-96 animate-pulse rounded bg-eucalipto/60"></div>
+        </div>
+        <p id="empty-note" class="mt-10 hidden max-w-xl text-muted" data-i18n="inv.empty"></p>
+      </div>
+    </section>
+
+    <!-- POR QUÉ QUERÉTARO -->
+    <section class="py-20 md:py-28">
+      <div class="container-x">
+        <p class="eyebrow" data-i18n="why.eyebrow"></p>
+        <h2 class="mt-3 max-w-2xl text-4xl md:text-5xl" data-i18n="why.title"></h2>
+        <div class="mt-14 grid gap-10 md:grid-cols-3">
+          <div class="border-t border-laton pt-6"><h3 class="text-2xl" data-i18n="why.1t"></h3><p class="mt-3 text-muted" data-i18n="why.1d"></p></div>
+          <div class="border-t border-laton pt-6"><h3 class="text-2xl" data-i18n="why.2t"></h3><p class="mt-3 text-muted" data-i18n="why.2d"></p></div>
+          <div class="border-t border-laton pt-6"><h3 class="text-2xl" data-i18n="why.3t"></h3><p class="mt-3 text-muted" data-i18n="why.3d"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="scroll-mt-20 bg-brand py-20 text-marfil md:py-28">
+      <div class="container-x">
+        <p class="eyebrow text-laton-claro!" data-i18n="srv.eyebrow"></p>
+        <h2 class="mt-3 max-w-2xl text-4xl md:text-5xl" data-i18n="srv.title"></h2>
+        <div class="mt-14 grid gap-px overflow-hidden rounded bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="bg-brand p-8"><p class="font-serif text-5xl text-laton-claro">01</p><h3 class="mt-6 text-2xl" data-i18n="srv.buy"></h3><p class="mt-3 text-sm leading-6 text-marfil/75" data-i18n="srv.buyd"></p></div>
+          <div class="bg-brand p-8"><p class="font-serif text-5xl text-laton-claro">02</p><h3 class="mt-6 text-2xl" data-i18n="srv.sell"></h3><p class="mt-3 text-sm leading-6 text-marfil/75" data-i18n="srv.selld"></p></div>
+          <div class="bg-brand p-8"><p class="font-serif text-5xl text-laton-claro">03</p><h3 class="mt-6 text-2xl" data-i18n="srv.rent"></h3><p class="mt-3 text-sm leading-6 text-marfil/75" data-i18n="srv.rentd"></p></div>
+          <div class="bg-brand p-8"><p class="font-serif text-5xl text-laton-claro">04</p><h3 class="mt-6 text-2xl" data-i18n="srv.lease"></h3><p class="mt-3 text-sm leading-6 text-marfil/75" data-i18n="srv.leased"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="scroll-mt-20 py-20 md:py-28">
+      <div class="container-x grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+        <div>
+          <p class="eyebrow" data-i18n="about.eyebrow"></p>
+          <h2 class="mt-3 text-5xl tracking-[0.08em] md:text-6xl" data-i18n="about.title"></h2>
+          <p class="mt-6 max-w-lg text-lg leading-8 text-muted" data-i18n="about.lead"></p>
+        </div>
+        <div class="grid grid-cols-3 items-end gap-4 md:gap-6">
+          <div><div class="arch ph-photo aspect-[3/4]"></div><p class="mt-4 font-serif text-2xl">Santiago</p><p class="text-xs text-muted" data-i18n="about.santiago"></p></div>
+          <div><div class="arch bg-brand aspect-[3/4.6]"></div><p class="mt-4 font-serif text-2xl">Miguel</p><p class="text-xs text-muted" data-i18n="about.miguel"></p></div>
+          <div><div class="arch ph-photo-warm aspect-[3/4]"></div><p class="mt-4 font-serif text-2xl">Rafa</p><p class="text-xs text-muted" data-i18n="about.rafa"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="scroll-mt-20 border-y border-line bg-eucalipto/50 py-20 md:py-28">
+      <div class="container-x">
+        <div class="max-w-2xl">
+          <p class="eyebrow" data-i18n="proc.eyebrow"></p>
+          <h2 class="mt-3 text-4xl md:text-5xl" data-i18n="proc.title"></h2>
+          <p class="mt-5 text-lg text-muted" data-i18n="proc.lead"></p>
+        </div>
+        <ol class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+          <li class="border-t-2 border-brand pt-5"><span class="font-serif text-3xl text-laton">1</span><p class="mt-2 font-medium" data-i18n="proc.1"></p></li>
+          <li class="border-t-2 border-brand pt-5"><span class="font-serif text-3xl text-laton">2</span><p class="mt-2 font-medium" data-i18n="proc.2"></p></li>
+          <li class="border-t-2 border-brand pt-5"><span class="font-serif text-3xl text-laton">3</span><p class="mt-2 font-medium" data-i18n="proc.3"></p></li>
+          <li class="border-t-2 border-brand pt-5"><span class="font-serif text-3xl text-laton">4</span><p class="mt-2 font-medium" data-i18n="proc.4"></p></li>
+          <li class="border-t-2 border-brand pt-5"><span class="font-serif text-3xl text-laton">5</span><p class="mt-2 font-medium" data-i18n="proc.5"></p></li>
+        </ol>
+        <a href="/login.html" class="btn btn-primary mt-12" data-i18n="nav.login"></a>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="scroll-mt-20 py-20 md:py-28">
+      <div class="container-x grid gap-14 lg:grid-cols-[1fr_1.3fr]">
+        <div>
+          <p class="eyebrow" data-i18n="contact.eyebrow"></p>
+          <h2 class="mt-3 text-4xl md:text-5xl" data-i18n="contact.title"></h2>
+          <p class="mt-5 text-lg text-muted" data-i18n="contact.lead"></p>
+          <a id="wa-link" href="#" target="_blank" rel="noopener" class="btn btn-ghost mt-8" data-i18n="contact.whatsapp"></a>
+        </div>
+        <form id="contact-form" class="card grid gap-5 p-7 md:grid-cols-2 md:p-10" novalidate>
+          <div><label class="label" for="c-name" data-i18n="contact.name"></label><input id="c-name" name="name" required minlength="2" maxlength="120" class="input" autocomplete="name"></div>
+          <div><label class="label" for="c-email" data-i18n="contact.email"></label><input id="c-email" name="email" type="email" required maxlength="200" class="input" autocomplete="email"></div>
+          <div><label class="label" for="c-phone" data-i18n="contact.phone"></label><input id="c-phone" name="phone" maxlength="40" class="input" autocomplete="tel"></div>
+          <div><label class="label" for="c-interest" data-i18n="contact.interest"></label>
+            <select id="c-interest" name="interest" class="input">
+              <option value="comprar" data-i18n="contact.i.buy"></option>
+              <option value="vender" data-i18n="contact.i.sell"></option>
+              <option value="rentar" data-i18n="contact.i.rent"></option>
+              <option value="poner en renta" data-i18n="contact.i.lease"></option>
+            </select>
+          </div>
+          <div class="md:col-span-2"><label class="label" for="c-msg" data-i18n="contact.message"></label><textarea id="c-msg" name="message" rows="4" maxlength="3000" class="input"></textarea></div>
+          <!-- Campo trampa contra bots -->
+          <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+          <div class="md:col-span-2"><button type="submit" class="btn btn-primary px-6 py-3" data-i18n="contact.send"></button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script type="module" src="/src/pages/landing.js"></script>
+</body>
+</html>

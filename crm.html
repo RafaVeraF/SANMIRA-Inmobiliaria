@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM · SANMIRA</title>
+  <meta name="theme-color" content="#1E3B2F">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body class="min-h-screen bg-marfil">
+  <div class="flex min-h-screen">
+    <!-- Barra lateral -->
+    <aside id="sidebar" class="fixed inset-y-0 left-0 z-40 flex w-64 -translate-x-full flex-col bg-brand p-5 text-marfil transition-transform lg:static lg:translate-x-0">
+      <a href="/crm.html" class="mb-8 block px-2"><img src="/brand/sanmira-logo-horizontal-ivory.svg" alt="SANMIRA" class="h-10 w-auto"></a>
+      <nav class="flex flex-1 flex-col gap-1" aria-label="CRM">
+        <a href="#tablero" class="nav-link" data-nav="tablero">Tablero</a>
+        <a href="#oportunidades" class="nav-link" data-nav="oportunidades">Oportunidades</a>
+        <a href="#propiedades" class="nav-link" data-nav="propiedades">Propiedades</a>
+        <a href="#valuaciones" class="nav-link" data-nav="valuaciones">Opiniones de valor</a>
+        <a href="#leads" class="nav-link" data-nav="leads">Leads <span id="leads-count" class="ml-auto hidden rounded-full bg-laton-claro px-2 text-xs text-brand"></span></a>
+        <a href="#usuarios" class="nav-link" data-nav="usuarios">Usuarios</a>
+        <a href="/" class="nav-link mt-auto" target="_blank">Ver sitio público ↗</a>
+      </nav>
+      <div class="mt-4 border-t border-white/10 pt-4 text-sm">
+        <p id="me-name" class="font-medium"></p>
+        <p id="me-role" class="text-xs text-marfil/60"></p>
+        <button type="button" id="logout" class="mt-3 cursor-pointer text-xs text-laton-claro hover:underline">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <div class="flex min-w-0 flex-1 flex-col">
+      <header class="flex h-14 items-center gap-3 border-b border-line bg-white px-5 lg:hidden">
+        <button type="button" id="sidebar-btn" class="cursor-pointer p-1" aria-label="Menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+        </button>
+        <img src="/brand/sanmira-logo-horizontal.svg" alt="SANMIRA" class="h-8 w-auto">
+      </header>
+      <main id="view" class="flex-1 p-5 md:p-8 xl:p-10" aria-live="polite"></main>
+    </div>
+  </div>
+  <script type="module" src="/src/pages/crm.js"></script>
+</body>
+</html>

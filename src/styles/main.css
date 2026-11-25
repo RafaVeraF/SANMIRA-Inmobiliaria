@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* Tokens del manual de identidad SANMIRA */
+@theme {
+  --color-brand: #1E3B2F;
+  --color-brand-soft: #2B5141;
+  --color-marfil: #F6F2EA;
+  --color-eucalipto: #DCE5DA;
+  --color-salvia: #7F9C86;
+  --color-laton: #7F6130;
+  --color-laton-claro: #C9A46A;
+  --color-cantera: #C89A82;
+  --color-ink: #13241C;
+  --color-muted: #4D5E55;
+  --color-line: #D9D3C6;
+  --color-ok: #2F6B45;
+  --color-danger: #A63D2F;
+
+  --font-serif: "Cardo", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-arch: 9999px;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-marfil text-ink font-sans antialiased; }
+  h1, h2, h3, h4 { @apply font-serif font-normal; }
+  :focus-visible { outline: 2px solid var(--color-laton); outline-offset: 2px; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-7xl px-5 md:px-10; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em] text-laton; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded px-5 py-2.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer; }
+  .btn-primary { @apply bg-brand text-marfil hover:bg-brand-soft; }
+  .btn-ghost { @apply border border-brand/30 text-brand hover:bg-eucalipto; }
+  .btn-light { @apply bg-marfil text-brand hover:bg-white; }
+  .btn-sm { @apply px-3 py-1.5 text-xs; }
+  .btn-danger { @apply border border-danger/40 text-danger hover:bg-danger/5; }
+
+  .input { @apply w-full rounded-sm border border-muted/50 bg-white px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/15; }
+  .label { @apply mb-1 block text-sm font-medium text-ink; }
+
+  .card { @apply rounded border border-line bg-white; }
+  .card-hover { @apply transition-shadow hover:shadow-[0_1px_2px_rgba(19,36,28,.06),0_8px_24px_rgba(19,36,28,.08)]; }
+
+  /* Motivo de marca: marco superior en arco */
+  .arch { border-top-left-radius: 9999px; border-top-right-radius: 9999px; overflow: hidden; }
+
+  .badge { @apply inline-flex items-center gap-1 rounded-sm px-2 py-0.5 text-xs font-medium; }
+  .badge-neutral { @apply bg-eucalipto text-ink; }
+  .badge-ok { @apply bg-ok/10 text-ok; }
+  .badge-warn { @apply bg-laton/10 text-laton; }
+  .badge-danger { @apply bg-danger/10 text-danger; }
+  .badge-info { @apply bg-brand text-marfil; }
+
+  /* Placeholder fotográfico cuando una propiedad aún no tiene imagen */
+  .ph-photo { background: linear-gradient(170deg, #9DB7A2 0%, #7F9C86 45%, #5E7A65 100%); }
+  .ph-photo-warm { background: linear-gradient(165deg, #E6D3C3 0%, #C89A82 60%, #A87B65 100%); }
+
+  /* CRM */
+  .nav-link { @apply flex items-center gap-3 rounded px-3 py-2 text-sm text-marfil/80 hover:bg-white/10 hover:text-marfil; }
+  .nav-link.active { @apply bg-white/10 text-marfil; }
+  .th { @apply border-b border-line px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-muted; }
+  .td { @apply border-b border-line px-3 py-2.5 text-sm align-top; }
+}
+
+/* Diálogos nativos */
+dialog::backdrop { background: rgba(19, 36, 28, 0.45); }
+dialog { max-height: 92vh; }
